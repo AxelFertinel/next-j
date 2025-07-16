@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { NavigationMenuDemo } from "@/components/ui/navigation";
+import ToastProvider from "@/components/Toastify";
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
@@ -31,7 +32,9 @@ export default function RootLayout({
                 <div className="bg-gray-500 p-2">
                     <NavigationMenuDemo />
                 </div>
-                <main className="max-w-7xl m-auto">{children}</main>
+                <main className="max-w-7xl m-auto">
+                    <ToastProvider>{children}</ToastProvider>
+                </main>
             </body>
         </html>
     );
